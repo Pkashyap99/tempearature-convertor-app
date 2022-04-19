@@ -1,3 +1,12 @@
+Notes :
+
+I have used semantic-ui-react framework to design out temperature convertor application .It is just like bootstrap .
+React Functional Components are used for creating Components .
+styled-components are beign used for generating themes for our application i.e currently we have two themes light and dark respectilvely.
+Themes.js file are used for describing our css for light and dark themes respectively.
+Toggler.js file is used for button which are created for toggling between two themes .
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -6,6 +15,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### Please download all libraries and dependency by running command : `npm install`
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -13,6 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
 
 ### `npm test`
 
