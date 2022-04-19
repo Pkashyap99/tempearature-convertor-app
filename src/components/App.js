@@ -6,6 +6,7 @@ import Toggle from "./Toggler"
 import { lightTheme, darkTheme } from "./Themes"
 import 'semantic-ui-css/semantic.min.css'
 import { Dropdown } from 'semantic-ui-react';
+import '../App.css';
 
 const App = () => {
 
@@ -95,7 +96,7 @@ const App = () => {
         <GlobalStyles/>
         <div>
         <Toggle theme={theme} toggleTheme={themeToggler} />
-            <div className="ui raised very padded container segment" style={{ marginTop: "10px", width: "930px" }}>
+            <div className="ui raised very padded container segment App-header " style={{ marginTop: "10px", width: "930px" }}>
 
                 <h2 className="ui header block aligned icon center">
                     <div className="ui pointing below label swaptext" theme={theme} toggleTheme={themeToggler}>
