@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "./globalStyles";
+import  {useDarkMode} from "./useDarkMode"
+import Toggle from "./Toggler"
+import { lightTheme, darkTheme } from "./Themes"
 import 'semantic-ui-css/semantic.min.css'
 import { Dropdown } from 'semantic-ui-react';
 
 const App = () => {
+
+    const [theme, themeToggler] = useDarkMode();
+    const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
     const tempreatureUnits = [
         { key: 'Celsius', text: 'Celsius [°C]', value: 'Celsius' },
@@ -82,17 +90,20 @@ const App = () => {
 
 
     return (
+        <ThemeProvider theme={themeMode}>
+        <>
+        <GlobalStyles/>
         <div>
-
+        <Toggle theme={theme} toggleTheme={themeToggler} />
             <div className="ui raised very padded container segment" style={{ marginTop: "10px", width: "930px" }}>
 
                 <h2 className="ui header block aligned icon center">
-                    <div className="ui pointing below label">
+                    <div className="ui pointing below label swaptext" theme={theme} toggleTheme={themeToggler}>
                         Click to swap.
                     </div>
                     <i style={{ cursor: "pointer" }} className="circular exchange icon"
                         onClick={() => swapOperation()}></i>
-                    React Temperature Converter
+                    Temperature Converter
                 </h2>
 
                 <div className="ui placeholder segment">
@@ -157,6 +168,8 @@ const App = () => {
             </div>
 
         </div>
+        </>
+    </ThemeProvider>
 
     );
 
